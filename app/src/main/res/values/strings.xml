@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TuitionCalculator</string>
+    <string name="zero">0</string>
+    <string name="graduate">Graduate</string>
+    <string name="undergraduate">Undergraduate</string>
+
+</resources>
