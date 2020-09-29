@@ -7,6 +7,7 @@ public class TuitionCalculator {
     boolean resident;
     int credits;
 
+
     double tuition = 0;
     double fees = 0;
     double total = 0;
@@ -83,5 +84,17 @@ public class TuitionCalculator {
             creditCost = 870.10;
         }
         return credits * creditCost;
+    }
+
+    public double getTuition() {
+        return tuition;
+    }
+
+    public double getFees() {
+        return fees;
+    }
+
+    public double getTotal() {
+        return total;
     }
 }
