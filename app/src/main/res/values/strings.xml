@@ -3,5 +3,6 @@
     <string name="zero">0</string>
     <string name="graduate">Graduate</string>
     <string name="undergraduate">Undergraduate</string>
+    <string name="price">$0.00</string>
 
 </resources>
