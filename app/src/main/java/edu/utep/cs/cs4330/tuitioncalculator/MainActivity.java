@@ -1,3 +1,5 @@
+//Gilbert Alvarez
+//cs 4330
 package edu.utep.cs.cs4330.tuitioncalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -65,10 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                calc.calculateEverything();
-                tV.setText(String.format("$%.2f", calc.getTuition()));
-                fV.setText(String.format("$%.2f", calc.getFees()));
-                toV.setText(String.format("$%.2f", calc.getTotal()));
+                updatePriceDisplay();
             }
         });///end of on text changed listener
 
@@ -86,10 +85,7 @@ public class MainActivity extends AppCompatActivity {
         else{
             calc.setResident(false);
         }
-        calc.calculateEverything();
-        tV.setText(String.format("$%.2f", calc.getTuition()));
-        fV.setText(String.format("$%.2f", calc.getFees()));
-        toV.setText(String.format("$%.2f", calc.getTotal()));
+        updatePriceDisplay();
 //        Toast.makeText(this, "Resident: "+calc.isResident(),
 //                Toast.LENGTH_LONG).show();
     }
@@ -102,10 +98,7 @@ public class MainActivity extends AppCompatActivity {
         }
         //Toast.makeText(this, "graduate: "+calc.isGraduate()+" "+calc.isUndergraduate(),
                 //Toast.LENGTH_LONG).show();
-        calc.calculateEverything();
-        tV.setText(String.format("$%.2f", calc.getTuition()));
-        fV.setText(String.format("$%.2f", calc.getFees()));
-        toV.setText(String.format("$%.2f", calc.getTotal()));
+        updatePriceDisplay();
     }
 
 
@@ -116,12 +109,16 @@ public class MainActivity extends AppCompatActivity {
         }
         //Toast.makeText(this, "graduate: "+calc.isGraduate()+" "+calc.isUndergraduate(),
                 //Toast.LENGTH_LONG).show();
+        updatePriceDisplay();
+    }
+
+
+    public void updatePriceDisplay(){
         calc.calculateEverything();
         tV.setText(String.format("$%.2f", calc.getTuition()));
         fV.setText(String.format("$%.2f", calc.getFees()));
         toV.setText(String.format("$%.2f", calc.getTotal()));
     }
-
 
 
 

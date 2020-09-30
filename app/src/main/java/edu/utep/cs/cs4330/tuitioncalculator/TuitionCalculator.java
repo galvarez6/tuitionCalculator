@@ -1,3 +1,5 @@
+//Gilbert Alvarez
+//cs 4330
 package edu.utep.cs.cs4330.tuitioncalculator;
 
 public class TuitionCalculator {
