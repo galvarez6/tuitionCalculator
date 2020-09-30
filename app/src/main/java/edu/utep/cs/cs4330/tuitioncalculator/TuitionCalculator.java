@@ -2,18 +2,40 @@ package edu.utep.cs.cs4330.tuitioncalculator;
 
 public class TuitionCalculator {
 
-    boolean graduate;
     boolean undergraduate;
+    boolean graduate=true;
     boolean resident;
-    int credits;
+    int credits=0;
 
 
-    double tuition = 0;
-    double fees = 0;
-    double total = 0;
+    double tuition;
+    double fees;
+    double total;
 
 
-    public TuitionCalculator(boolean graduate, boolean undergraduate, boolean resident, int credits){
+    public TuitionCalculator(){
+
+        graduate = true;
+        undergraduate =false;
+        resident = false;
+        credits = 0;
+
+        tuition = 0;
+        fees = 0;
+        total = 0;
+//        if(undergraduate && !graduate){
+//            this.fees = feesPrice(credits) + uTech(credits) + uService(credits);
+//            this.tuition = underGradTuition(credits, resident);
+//            this.total = fees + tuition;
+//        }
+//        else if(graduate && !undergraduate){
+//            this.fees = uTech(credits) + uService(credits) + feesPrice(credits);
+//            this.tuition = gradTuition(credits, resident);
+//            this.total = fees + tuition;
+//        }
+    }
+
+    public void calculateEverything(){
         if(undergraduate && !graduate){
             this.fees = feesPrice(credits) + uTech(credits) + uService(credits);
             this.tuition = underGradTuition(credits, resident);
@@ -24,8 +46,6 @@ public class TuitionCalculator {
             this.tuition = gradTuition(credits, resident);
             this.total = fees + tuition;
         }
-
-
     }
 
     public double uTech(int credits){
@@ -86,6 +106,24 @@ public class TuitionCalculator {
         return credits * creditCost;
     }
 
+
+
+    public boolean isGraduate() {
+        return graduate;
+    }
+
+    public boolean isUndergraduate() {
+        return undergraduate;
+    }
+
+    public boolean isResident() {
+        return resident;
+    }
+
+    public int getCredits() {
+        return credits;
+    }
+
     public double getTuition() {
         return tuition;
     }
@@ -96,5 +134,21 @@ public class TuitionCalculator {
 
     public double getTotal() {
         return total;
+    }
+
+    public void setGraduate(boolean graduate) {
+        this.graduate = graduate;
+    }
+
+    public void setUndergraduate(boolean undergraduate) {
+        this.undergraduate = undergraduate;
+    }
+
+    public void setResident(boolean resident) {
+        this.resident = resident;
+    }
+
+    public void setCredits(int credits) {
+        this.credits = credits;
     }
 }
